@@ -21,3 +21,11 @@ Route::post('login', 'AuthController@login');
 Route::post('logout', 'AuthController@logout');
 Route::post('refresh', 'AuthController@refresh');
 Route::post('me', 'AuthController@me');
+
+Route::get('test', function () {
+    return 'test';
+});
+
+Route::group(['prefix' => 'V1', 'namespace' => 'Api\V1'], function () {
+    Route::resource('user', 'UserController');
+});
