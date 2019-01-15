@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::namespace('Web')->group(function () {
+    Route::get('/', 'IndexController')->name('index');
 });
